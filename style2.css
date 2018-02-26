@@ -4,7 +4,7 @@ body {
   /*Keep everything centred*/
   margin: 0 auto;
   /*Define the max width of the body content*/
-  max-width: 940px;
+  max-width: 1140px;
   /*Make the body content take up 90% of the viewport width*/
   width: 90vw;
 }
@@ -23,7 +23,7 @@ header {
   position: fixed;
   /*And hack in the widths again because without this, and with the position:fixed,
     it all goes to hell*/
-  max-width: 940px;
+  max-width: 1140px;
   width: 90vw;
   /*Give it its own background so it's solid when the rest of the page scrolls over it*/
   background: #f3f3f3;
