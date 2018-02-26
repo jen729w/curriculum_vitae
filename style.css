@@ -1,0 +1,187 @@
+body {
+  font-family: 'Nanum Myeongjo';
+  font-weight: 700;
+  font-size: 16px;
+  background: orange;
+  margin: 0 auto;
+  /*margin-top: 200px;*/
+  max-width: 940px;
+  width: 90vw;
+}
+
+header {
+  margin-top: 20px;
+  position: fixed;
+  z-index: 100;
+  background: grey;
+}
+
+.content-grid__your-name {
+  font-size: 3em;
+  font-weight: 700;
+  background: blue;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.content-grid-title {
+  justify-self: end;
+  background: purple;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 5;
+  grid-column-end: 9;
+}
+
+.content-grid-details {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.content-grid {
+  justify-self: end;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 5;
+  grid-column-end: 9;
+}
+
+main {
+  line-height: 1.4;
+  background: lightblue;
+  top: 150px;
+  position: relative;
+}
+
+.job-listing {
+  padding: 10px 0px;
+}
+
+/*Set up an 8-column grid; used repeatedly*/
+.content-grid {
+  display: grid;
+  /*Set up a grid with 8 columns*/
+  grid-template-columns: repeat(8, 1fr);
+  /*background: lightblue;*/
+}
+
+.content-grid__year-in-margin {
+  grid-column: 1 / span 1;
+  /*background: yellow;*/
+  font-size: 2em;
+  font-style: italic;
+  margin-left: 20px;
+}
+
+.content-grid__company-name {
+  grid-column: 2 / span 4;
+  /*background: red;*/
+  font-size: 1.6em;
+  /*Slight padding at the top to line it up with the year to its left*/
+  padding-top: 5px;
+}
+
+.content-grid__company-name-note {
+  font-size: 16px;
+  font-style: italic;
+  margin-left: 50px;
+}
+
+.content-grid__job-title {
+  grid-column: 6 / span 2;
+  /*background: green;*/
+  font-size: 1.2em;
+  /*Slight padding at the top to line it up with the year to its left*/
+  padding-top: 11px;
+}
+
+.content-grid__job-note {
+  grid-column: 2 / span 4;
+  /*background: green;*/
+  font-size: 0.8em;
+  font-style: italic;
+  color: #444;
+}
+
+.content-grid__job-details {
+  grid-column: 2 / span 6;
+  /*background: orange;*/
+  margin: 20px 0px;
+}
+
+#job-byte {
+  background: white;
+}
+
+
+/*
+h2 {
+  font-size: 1.5em;
+  font-style: bold;
+  color: #555;
+  border-bottom: 2px solid #555;
+  width: 80%;
+  background: lightgrey;
+  padding: 10px 10px 5px 10px;
+}
+
+.outer,
+.inner {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.outer {
+  background: lightgreen;
+  margin-top: 100px;
+}
+
+.inner {
+  background: purple;
+}
+
+.item {
+  height: 50px;
+  margin-top: 10px;
+}
+
+.job-title {
+  font-style: italic;
+  color: #444;
+  font-size: 1.4em;
+}
+
+.from-to {
+  font-style: italic;
+  color: #666;
+  font-size: 0.8em;
+  margin-top: -45px;
+}
+
+.job-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-bottom: 5px;
+}
+
+.company-name {
+  font-size: 1.6em;
+}
+
+.year-in-margin {
+  position: relative;
+  right: 90px;
+  bottom: 40px;
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.job-detail {
+  margin-bottom: 30px;
+}*/
