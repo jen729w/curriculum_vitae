@@ -1,5 +1,6 @@
 body {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.4;
   background: #f3f3f3;
   /*Keep everything centred*/
   margin: 0 auto;
@@ -7,6 +8,7 @@ body {
   max-width: 1140px;
   /*Make the body content take up 90% of the viewport width*/
   width: 90vw;
+  font-family: 'Gentium Basic', serif;
 }
 
 main {
@@ -31,6 +33,26 @@ header {
   padding-top: 20px;
 }
 
+h1 {
+  grid-column: 2 / span 6;
+  font-size: 2em;
+  border-bottom: 1px solid black;
+}
+
+h2.left {
+  grid-column: 2 / span 3;
+  font-size: 1.4em;
+  border-bottom: 1px dotted grey;
+  margin-right: 10px;
+}
+
+h2.right {
+  grid-column: 5 / span 3;
+  font-size: 1.4em;
+  border-bottom: 1px dotted grey;
+  margin-left: 10px;
+}
+
 .grid-8-column {
   /*Make it a grid*/
   display: grid;
@@ -42,7 +64,6 @@ header {
   .header__your-name {
     grid-column: 2 / span 4;
     font-size: 2em;
-    background: yellow;
   }
 
   .header__page-title {
@@ -64,6 +85,28 @@ header {
     text-align: right;
   }
 
+/*Specify the about me grid elements*/
+  .about-me {
+    /*Anything specific to the grid?*/
+  }
+
+  .about-me__content {
+    grid-column: 2 / span 6;
+    padding-top: 10px;
+  }
+
+  .about-me__content-left {
+    grid-column: 2 / span 3;
+    padding-top: 10px;
+    margin-right: 10px;
+  }
+
+  .about-me__content-right {
+    grid-column: 5 / span 3;
+    padding-top: 10px;
+    margin-left: 10px;
+  }
+
 /*Specify the main job listing grid elements*/
   .job-listing {
     /*Give each new job listing a bit of space at the top*/
@@ -78,23 +121,24 @@ header {
   }
 
   .job-listing__company-name {
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 3;
     font-size: 1.6em;
     /*Slight padding at the top to line it up with the year to its left*/
     padding-top: 4px;
   }
 
   .job-listing__company-name-note {
-    font-size: 16px;
+    font-size: 18px;
     font-style: italic;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
   }
 
   .job-listing__job-title {
-    grid-column: 6 / span 2;
-    font-size: 1.2em;
+    grid-column: 5 / span 3;
+    font-size: 1.6em;
+    font-weight: 700;
     /*Slight padding at the top to line it up with the year to its left*/
-    padding-top: 11px;
+    padding-top: 4px;
     text-align: right;
   }
 
@@ -112,5 +156,5 @@ header {
 
   .job-listing__job_details {
     grid-column: 2 / span 6;
-    background: red; 
+    padding-top: 10px;
   }

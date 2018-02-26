@@ -4,20 +4,40 @@
   <meta charset="UTF-8">
   <title>Testing 2</title>
   <link href="style2.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Volkhov" rel="stylesheet">
 </head>
 <body>
 
   <!-- header has 2 grid rows and width defined in CSS -->
   <header class="grid-8-column">
     <div class="header__your-name">Johnny Noble</div>
-    <div class="header__page-title">C.V.<br />February 2018</div>
+    <div class="header__page-title">Curriculum vitae<br />February 2018</div>
     <div class="header__contact-details">jn@jnoble.net<br />0415658257</div>
     <div class="header__location">Melbourne, Australia</div>
   </header>
 
   <!-- main is pushed below the fixed header with CSS -->
   <main>
+
+    <section class="grid-8-column about-me">
+      <h1>About me</h1>
+      <div class="about-me__content">For 20 years I have worked in a diverse variety of roles across 50+ countries. I am now an NV2-cleared Project Manager based in Melbourne. I love to travel (but not full-time).</div>
+      <div class="about-me__content">Incredibly process-driven, in 2010 I invented a system to organise projects which I use across every project I manage. It's called <a href="https://johnnydecimal.com">Johnny.Decimal</a> and you should use it in your projects.</div>
+
+      <h2 class="left">What am I looking for?</h2>
+      <h2 class="right">What is my rate?</h2>
+      <div class="about-me__content-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium error magnam, officiis placeat inventore vero quae fuga explicabo ratione nobis! Facilis mollitia aspernatur unde, laborum reprehenderit voluptate necessitatibus vel quos.</div>
+      <div class="about-me__content-right">From $1,200&mdash;$1,500 per day, depending on:
+        <ul>
+          <li>The length of the contract</li>
+          <li>The location</li>
+      </div>
+    </section>
+
+
+
     <section class="grid-8-column job-listing">
+      <h1>Position history</h1>
       <div class="job-listing__year-in-margin">2018</div>
       <div class="job-listing__company-name">Leidos <span class="job-listing__company-name-note">(formerly Lockheed Martin)</span></div>
       <div class="job-listing__job-title">Technical Project Controller</div>
@@ -29,8 +49,8 @@
     
     <section class="grid-8-column job-listing">
       <div class="job-listing__year-in-margin">2015</div>
-      <div class="job-listing__company-name">Leidos <span class="job-listing__company-name-note">(formerly Lockheed Martin)</span></div>
-      <div class="job-listing__job-title">Technical Project Controller</div>
+      <div class="job-listing__company-name">Byte Information Technology</span></div>
+      <div class="job-listing__job-title">Project Manager</div>
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-note">Melbourne &amp; Canberra</div>
       <div class="job-listing__job_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos impedit minima possimus at ipsa accusantium odit animi officiis sequi aliquam quod unde modi, nobis molestiae quasi similique sunt optio explicabo.</div>
