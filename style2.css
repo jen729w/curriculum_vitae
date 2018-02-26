@@ -15,7 +15,7 @@ main {
   /*Make it relative so it sits below the header*/
   position: relative;
   /*And offset it so it isn't covered by the header*/
-  top: 150px;
+  top: 170px;
 }
 
 header {
@@ -31,6 +31,9 @@ header {
   background: #f3f3f3;
   /*Move it off the very top of the page*/
   padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 100;
+  border-bottom: 1px dotted lightgrey;
 }
 
 h1 {
@@ -51,6 +54,50 @@ h2.right {
   font-size: 1.4em;
   border-bottom: 1px dotted grey;
   margin-left: 10px;
+}
+
+abbr {
+  border-bottom: 1px dashed grey;
+}
+
+a:link {
+  border-bottom: 3px solid paleturquoise;
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  border-bottom: 1px dotted paleturquoise;
+  text-decoration: none;
+  color: black;
+}
+
+a:focus {
+
+}
+
+a:hover {
+  border-bottom: 3px solid midnightblue;
+  text-decoration: none;
+  color: midnightblue;
+}
+
+a:active {
+  border-bottom: none;
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/*Disable this on touch devices; they just don't get to see the tooltip*/
+@media (hover: none) {
+  abbr {
+    border-bottom: none;
+  }
 }
 
 .grid-8-column {
@@ -83,6 +130,7 @@ h2.right {
     grid-row: 2 / span 1;
     justify-self: end;
     text-align: right;
+    align-self: end;
   }
 
 /*Specify the about me grid elements*/
@@ -152,9 +200,16 @@ h2.right {
     font-size: 0.8em;
     font-style: italic;
     color: #444;
+    float: top;
   }
 
-  .job-listing__job_details {
+  .job-listing__job-details {
     grid-column: 2 / span 6;
     padding-top: 10px;
+  }
+
+  .job-listing__job-details-last {
+    grid-column: 2 / span 6;
+    border-bottom: 1px dotted grey;
+    padding-bottom: 20px;
   }
