@@ -65,6 +65,13 @@ abbr {
   border-bottom: 1px dashed lightgrey;
 }
 
+/*Disable this on touch devices; they just don’t get to see the tooltip*/
+@media (hover: none) {
+  abbr {
+    border-bottom: none;
+  }
+}
+
 a:link {
   border-bottom: 2px solid gainsboro;
   text-decoration: none;
@@ -110,13 +117,6 @@ p {
 
 .strikethrough {
   text-decoration: line-through;
-}
-
-/*Disable this on touch devices; they just don’t get to see the tooltip*/
-@media (hover: none) {
-  abbr {
-    border-bottom: none;
-  }
 }
 
 /*Nice hack from
