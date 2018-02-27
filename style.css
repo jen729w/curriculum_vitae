@@ -14,7 +14,7 @@ body {
 main {
   /*Make it relative so it sits below the header*/
   position: relative;
-  /*And offset it so it isn't covered by the header*/
+  /*And offset it so it isn’t covered by the header*/
   top: 185px;
 }
 
@@ -27,7 +27,7 @@ header {
     it all goes to hell*/
   max-width: 1140px;
   width: 90vw;
-  /*Give it its own background so it's solid when the rest of the page scrolls over it*/
+  /*Give it its own background so it’s solid when the rest of the page scrolls over it*/
   background: #f3f3f3;
   /*Move it off the very top of the page*/
   padding-top: 20px;
@@ -112,7 +112,7 @@ p {
   text-decoration: line-through;
 }
 
-/*Disable this on touch devices; they just don't get to see the tooltip*/
+/*Disable this on touch devices; they just don’t get to see the tooltip*/
 @media (hover: none) {
   abbr {
     border-bottom: none;
@@ -278,7 +278,7 @@ a.anchor {
     padding-top: 10px;
   }
 
-/*Give the bottom of the page some room so we don't overlap the footer*/
+/*Give the bottom of the page some room so we don’t overlap the footer*/
 .last-div-on-page {
   margin-bottom: 80px;
   padding-bottom: 10px;
