@@ -1,55 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 👋 Hi, visitor! I hand-coded this site, so if you notice anything janky -->
-<!-- 📞 please drop me a line. Call me on +61 415 658 257. -->
-
 <head>
   <meta charset="UTF-8">
-  <title>Johnny's CV playground</title>
+  <title>John Noble&mdash;Curriculum vitae&mdash;February 2018</title>
   <link href="style.css" type="text/css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
 </head>
-
 <body>
 
-  <div class="content-grid">
-    <div class="content-grid__your-name">John Noble</div>
-    <div class="content-grid__document-title">CV, February 2018</div>
-    <div class="content-grid__contact-details">jn@jnoble.net, 0415658257</div>
-    <div class="content-grid__location">Melbourne, Australia</div>
+  <!-- Johnny: don't forget you have TODOs throughout -->
+
+  <!-- header has 2 grid rows and width defined in CSS -->
+  <header class="grid-8-column">
+    <div class="header__your-name">Johnny Noble</div>
+    <div class="header__page-title">Curriculum vitae<br />February 2018</div>
+    <div class="header__contact-details"><a href="mailto:jn@jnoble.net">jn@jnoble.net</a><br /><a href="tel:+61415658257">0415 658 257</a></div>
+    <div class="header__location">Melbourne, Australia</div>
+    <div class="header__navigation">
+      <a href="#about-me">About me</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#position-history">Position history</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#education">Education</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#references">References</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#miscellanea">Miscellanea</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#that-is-all">Download</a>
+    </div>
+  </header>
+
+  <!-- main is pushed below the fixed header with CSS -->
+  <main>
+
+    <!-- Short version/long version note -->
+    <section class="grid-8-column">
+      <div class="short-long-version-note">This is the long version; for the (much) shorter version, <a href="/resume">click here</a>.<div>
+    </section>
+
+    <!-- h1 'About me' -->
+    <a class="anchor" id="about-me"></a>
+    <section class="grid-8-column about-me">
+      <h1 class="left-border-fillin"></h1>
+      <h1>About me</h1>
+      <div class="about-me__content">For 20 years I have worked in a diverse variety of roles across 50+ countries. I am now an NV2-cleared Project Manager based in Melbourne. I love to travel (but not full-time).</div>
+      <div class="about-me__content">Incredibly process-driven, in 2010 I invented a system to organise projects which I use across every project I manage. It's called <a href="https://johnnydecimal.com">Johnny.Decimal</a> and you should use it in your projects (or hire me to do that for you).</div>
+      <div class="about-me__content">I'm a problem solver, and I'll get bored if there isn't something to do. I'm a people person and I work by consensus rather than conflict. I'm a hard worker who puts his noise-cancelling headphones on and gets on with it.</div>
+
+      <h2 class="left">What am I looking for?</h2>
+      <h2 class="right">What is my rate?</h2>
+      <div class="about-me__content-left">
+        <p>After just completing a 3-year project, I am looking for a shorter-term gig.</p>
+        <p>I'd rather be smashed with a difficult project for a couple of months than become part of your furniture. <abbr title="It's also a lot cheaper.">IKEA is good for furniture</abbr>. Me, not so much.</p>
+        <p>Ideally you'll have something that will keep me busy for a couple of weeks to a couple of months.</p>
+      </div>
+      <div class="about-me__content-right">From $1,200&ndash;$1,500 per day, depending on:
+        <ul>
+          <li>The type of job, as you'd expect</li>
+          <li>The length of the contract</li>
+          <li>The location (Melbourne is preferred)</li>
+          <li>The requirement for security clearance</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- h1 'Position history' -->
+    <a class="anchor" id="position-history"></a>
+    <section class="grid-8-column job-listing">
+      <h1 class="left-border-fillin"></h1>
+      <h1>Position history</h1>
+      <div class="job-listing__year-in-margin">2018</div>
+      <div class="job-listing__company-name">Leidos <span class="job-listing__company-name-note">(formerly Lockheed Martin)</span></div>
+      <div class="job-listing__job-title">Technical Project Controller</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne &amp; Canberra</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Responsible for all aspects of the hardware implementation of the Department of Defence's Centralised Processing program, including:
+        <ul>
+          <li>The 3-year, 10,000+ line schedule, which was successfully delivered on time
+            <ul>
+              <!-- TODO: fix the abbr tag on mobile -->
+              <li>I managed the schedule from hardware procurement through delivery, asseting, physical installation (including end-to-end network cabling), to the point of power-on; at this point I handed off to the infrastructure deployment team</li>
+              <li>We consolidated 200+ data centres to 4 cores, 7 regionals, and 3 internationals</li>
+              <li>I also deployed the equipment at ~50% of these sites, including the 3 international sites</li>
+              <li>The <abbr title="It's a turd; if you can manage a project using OPP, you can do it with anything">wonderful</abbr> <a href="http://www.connexion.com.au/deltek-open-plan-professional">Deltek Open Plan Professional</a> was the scheduling tool of choice</li>
+            </ul>
+          </li>
+          <li>Management of all physical data centre-related contract deliverable items to the customer
+            <ul>
+              <li>Site surveys prior to installation to ensure availability of power, cooling, and rack space</li>
+              <li>Fully audited hardware installation details; every item, including all cables, barcoded and verified</li>
+              <li>Full asset details for billing, maintenance, and BAU support (~2,500 items of hardware)</li>
+              <li>Site hazard analysis for EHS compliance</li>
+            </ul>
+          </li>
+          <li>Team lead for the Network, Security, Deployment, and Tools &amp; Process teams
+            <ul>
+              <li>Between 10 &amp; 15 people, depending on the project phase, across Melbourne &amp; Canberra</li>
+              <li>&ldquo;Best team lead ever.&rdquo; &ndash;My mate Cameron</li>
+            </ul>
+          </li>
+          <li>Managed core switch upgrades (Cisco Nexus 7K series) at 2 very significant Defence locations; completed over long weekends with no downtime</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2015</div>
+      <div class="job-listing__company-name">Byte Information Technology</div>
+      <div class="job-listing__job-title">Project Manager</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a 1,000+ seat Wintel refresh program across 7 Amcor sites in Australia &amp; New Zealand.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2013</div>
+      <div class="job-listing__company-name">IBM</div>
+      <div class="job-listing__job-title">Service Delivery Manager</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne &amp; Bangalore, India</div>
+      <div class="job-listing__job-details">Migrated the NAB's 1st level Service Desk to a new offshore desk based in Bangalore, India.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Designed improved escalation and feedback processes to anticipate and prevent customer dissatisfaction events. Improved the desk's knowledge tools to enable agents to discover solutions. Customer satisfaction increased from ~65% at arrival to an on-target 85+%.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2011</div>
+      <div class="job-listing__company-name">Victorian Building Authority</div>
+      <div class="job-listing__job-title">Solution Architect</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details">Planned and delivered the migration of the organisation's physical Exchange 5.5 infrastructure to a virtualized Exchange Server 2010 hosted on VMware ESX.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Upgraded the core Citrix farm to XenApp, including a high visibility public-facing database with over 100,000 users.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2011</div>
+      <div class="job-listing__company-name">Mod Dance Company</div>
+      <div class="job-listing__job-title">Producer</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details">Project managed, from inception, a Graeme Murphy contemporary dance production, seen by over 5,000 people at the State Theatre, Melbourne and Star City, Sydney.</div>
+      <div class="job-listing__job-details">This was the greatest job I've ever had. Me and a couple of friends got involved with this project and it turned from a thing we did at night in to our full-time job. It consumed us for a year: we did everything, and we made it up as we went.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">We opened in March 2011 at the State Theatre in Melbourne. The show toured to Sydney, and then we went broke. You should listen to people who tell you there's no money in the arts.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2010</div>
+      <div class="job-listing__company-name">National Australia Bank</div>
+      <div class="job-listing__job-title">Service Development Manager</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Planned and delivered the migration of 3,500 users from legacy platforms to a centralised remote access solution ('Access NAB') based on Citrix XenDesktop/XenApps; integrated the support processes to BAU and transitioned business processes offshore.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2009</div>
+      <div class="job-listing__company-name">National Australia Bank</div>
+      <div class="job-listing__job-title">Desktop Support Manager</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details">Managed the bank's 2nd level Desktop Support team, the escalation point for all desktop and application related issues for the bank's 33,000 seats.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Managed the transition of the bank's 1st level support function from Telstra to IBM; assisted the new desk in Queensland with process, training and quality issues.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2007</div>
+      <div class="job-listing__company-name">National Australia Bank</div>
+      <div class="job-listing__job-title">Senior Technical Specialist</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Implemented the bank's new nationwide XP desktop solution; 3rd level technical specialist deep in the Windows Server admin tools.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2006</div>
+      <div class="job-listing__company-name">Department of Justice Victoria</div>
+      <div class="job-listing__job-title">Senior Technical Consultant</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details">Relocated the Department's data centre from Melbourne's CBD to a 3rd party hosting provider over the course of 6 weekends without a single unplanned disruption to service.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Virtualised a number of critical legacy systems (VMware) as part of the migration to mitigate the risks of ageing hardware.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2005</div>
+      <div class="job-listing__company-name">gen-i</div>
+      <div class="job-listing__job-title">Senior Technical Consultant</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Melbourne</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Consultant providing Microsoft installation and support services to gen-i's customers.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2003</div>
+      <div class="job-listing__company-name">Getech</div>
+      <div class="job-listing__job-title">Senior Technical Consultant</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Ipswich, UK</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Consultant providing Microsoft installation and support services to Getech's customers.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2001</div>
+      <div class="job-listing__company-name">The British Council</div>
+      <div class="job-listing__job-title">Global Implementation Manager</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Albania, Kosovo, Macedonia, Colombia, Ukraine, Senegal, Nigeria, Tunisia, Spain, Portugal, Italy ... okay, I'm showing off</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a global SOE rollout in a bunch of countries around the world. This was back in the day when you still got flown Business everywhere. Good times.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">1999</div>
+      <div class="job-listing__company-name">The National Grid</div>
+      <div class="job-listing__job-title">Rollout Team Leader</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">London, UK</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Responsible for a team of 15, providing support to rollout teams operating around the country: account migration, 2nd/3rd line support and server deployment.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">1999</div>
+      <div class="job-listing__company-name">EDS/Xerox</div>
+      <div class="job-listing__job-title">European Rollout Team Leader</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Northern Europe &amp; Scandinavia</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Responsible for teams of up to 5 engineers deploying a standard desktop to over 2,000 desktops across Europe and Scandinavia.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">1998</div>
+      <div class="job-listing__company-name">Xerox</div>
+      <div class="job-listing__job-title">Rollout Team Leader</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">Hertfordshire, UK</div>
+      <div class="job-listing__job-details">We got there! Are you still reading?! My first job. I co-ordinated the rollout of Windows NT (as the customer rather than the vendor).</div>
+    </section>
+
+    <!-- h1 'Education' -->
+    <a class="anchor" id="education"></a>
+    <section class="grid-8-column job-listing">
+      <h1 class="left-border-fillin"></h1>
+      <h1>Education</h1>
+      <div class="job-listing__year-in-margin">1997</div>
+      <div class="job-listing__company-name">University of York</div>
+      <div class="job-listing__job-title">BSc Computer Science</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note">York, UK</div>
+      <div class="job-listing__job-details">I went to uni and, honestly, didn't do a lot of work. Freedom, man, as an 18-year-old. Who wants to study?</div>
+      <div class="job-listing__job-details">Fortunately my 3rd year was a placement year, and I ended up at Xerox. At the end of that year, my university weren't so keen on having me back (due to my woefully poor academic performance) and Xerox weren't so keen on having me leave (due to my exquisitely fine work performance). For me it was perfect&mdash;I loved work, I hated study.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">And so, I didn't finish my degree and I stayed at Xerox. It has turned out to be one of the most serendipitous decisions I've ever made; the Xerox job led to work all around Europe, which led to my job with The British Council which took me all around the world. You don't get to travel the world on expenses in a graduate position, no sir.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin"></div>
+      <div class="job-listing__full-width-description">Other professional studies</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details">Through the years I've done the odd qualification here and there&mdash;Microsoft, Citrix, the usual stuff&mdash;but I've always found it pointless. You don't learn anything.</div>
+      <div class="job-listing__job-details">Recently I've thought about doing one of the Project Management certifications but, honestly, I've met enough PMs who are &lsquo;PRINCE2 certified&rsquo; to know it's a waste of time. I spend my time refining <a href="https://johnnydecimal.com">Johnny.Decimal</a> instead.</div>
+    </section>
+
+    <!-- h1 'References' -->
+    <a class="anchor" id="references"></a>
+    <section class="grid-8-column job-listing">
+      <h1 class="left-border-fillin"></h1>
+      <h1>References</h1>
+      <h2 class="left">Alex Garner</h2>
+      <h2 class="right">Diana Gardner</h2>
+      <div class="about-me__content-left">
+        <p>Alex is the Datacentre &amp; Infrastructure Manager at Leidos and was my most recent manager.</p>
+        <p>I met Alex in 2006 when we both worked at NAB. Since then we have been close friends, and in 2015 he called me and asked me if I could come to work at Leidos.</p>
+      </div>
+      <div class="about-me__content-right">
+        <p>Diana is a Program Manager who I have also known since the NAB days and have since worked with at Leidos.</p>
+        <p>On hearing of my departure, she was kind enough to offer to be a referee.</p>
+      </div>
+      <!-- <div class="job-listing__year-in-margin"></div>
+      <div class="job-listing__company-name">Technologies I know</span></div>
+      <div class="job-listing__job-title"></div>
+      <div class="job-listing__last_column_filler"></div> -->
+      <div class="job-listing__job-details">Contact details for Alex and Diana are available on request.</div>
+    </section>
+
+    <!-- h1 'Miscellanea' -->
+    <a class="anchor" id="miscellanea"></a>
+    <section class="grid-8-column job-listing">
+      <h1 class="left-border-fillin"></h1>
+      <h1>Miscellanea</h1>
+      <div class="job-listing__year-in-margin"></div>
+      <div class="job-listing__company-name">Technologies I know</div>
+      <div class="job-listing__job-title"></div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details">I grew up with a <a href="https://en.wikipedia.org/wiki/ZX_Spectrum#ZX_Spectrum+">Sinclair ZX Spectrum+</a>, moved up to the mighty <a href="https://en.wikipedia.org/wiki/Amiga_500">Amiga 500</a>, then it all went downhill as I spent my first student loan on a <a href="https://en.wikipedia.org/wiki/Dell_Dimension#XPS_series">Dell Dimension P90</a>.</div>
+      <div class="job-listing__job-details">I'm an old-school Wintel guy. My formative working years were spent with NT4 and Windows 95. Since then my professional career has followed the Microsoft path: I was a 3rd level sysadmin when Windows 2000/XP was all the rage, and I've put my time in at the Microsoft console. I know my way round Active Directory.</div>
+      <div class="job-listing__job-details">I know enough about a network to get by, though I wouldn't call myself a network engineer. I <em>can</em> calculate a subnet using binary and a pencil, which must count for something.</div>
+      <div class="job-listing__job-details">For the last 5-or-so years, however, I've been off the tools. Now I'm more interested in helping the team with their hands in the engine work as efficiently as they can, rather than doing it myself. If you're looking for an engineer, that is no longer me.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Now, unless forced to do otherwise at work, I live on a Mac.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin"></div>
+      <div class="job-listing__company-name">Tools I use</div>
+      <div class="job-listing__job-title"></div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details job-listing__job-details-last">I like to keep things simple, and favour the following tools and methodologies.
+        <ul>
+          <li>Do I need to mention <a href="https://johnnydecimal.com">Johnny.Decimal</a> again? :-)</li>
+          <li>I use <a href="https://www.omnigroup.com/omnifocus">OmniFocus</a> or <a href="https://culturedcode.com/things/">Things</a> to track what I need to do, depending on my mood and the complexity of the project.</li>
+          <li>I use <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">the Pomodoro Technique</a> to focus on work. Turns out, on a <em>great</em> day you can get about 5 hours of actual work done. (Interesting experiment: I'll only bill you the actual hours I work, like a lawyer. My rate will be higher as a result, but I think it would work out better for both parties.)</li>
+          <li>For writing almost anything, it's <a href="https://daringfireball.net/projects/markdown/">Markdown</a>. Plain-text is the future; I abhor MS Word.</li>
+          <li>Keeping notes (in Markdown) is easy with <a href="https://simplenote.com">Simplenote</a> (if you're able to sync to the internet), <a href="http://resoph.com/ResophNotes/Welcome.html">ResophNotes</a> (if you're not), or <a href="http://www.bear-writer.com">Bear</a> (if you're mostly a macOS/iOS user and like pretty things).</li>
+          <li>You can't beat a <a href="https://rhodiapads.com/collections_orange_black.php">Rhodia notepad</a> and a <a href="https://blackwing602.com/product/blackwing-pearl/">Blackwing Pearl pencil</a>.</li>
+          <li>That all said, my general distaste for Microsoft products stops at the door of Excel. Excel is a beautiful thing and I could not live without it. I will not be modest about my Excel skills: I kill it.</li>
+          <li>I prefer phone calls over email. My ideal job is one where I don't have an email account.</li>
+          <li>I don't have a LinkedIn account. I had one but found its value to be <span class="strikethrough">questionable</span> nonexistent and the spam annoyed me, so I deleted it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2018</div>
+      <div class="job-listing__full-width-description">HTML5/CSS3/Node.js development</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details">The current issue with <a href="https://johnnydecimal.com">Johnny.Decimal</a> is that you need some sort of system to keep track of your database of numbers. I use Google Sheets at home and generally fall back to SharePoint Lists when I'm working for someone else, but both solutions are clunky.</div>
+      <div class="job-listing__job-details">I need a custom solution, so I decided to build one. I'm in the process of teaching myself the core web technologies: HTML5 &amp; CSS3 (which I've used to hand-code the page you're reading, from scratch), with Javascript &amp; Node.js/Express for actual appliation functionality.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">The whole thing will be hosted on a Linode instance; I know enough *nix to maintain my own hosting services.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">2013</div>
+      <div class="job-listing__full-width-description">I'm a marriage celebrant</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details job-listing__job-details-last">In 2013 I became a Commonwealth-registered marriage celebrant so that I could marry my best friends. I've done 3 since then and have a couple lined up for this year.</div>
+    </section>
+
+    <section class="grid-8-column job-listing">
+      <div class="job-listing__year-in-margin">1996</div>
+      <div class="job-listing__full-width-description">Royal Humane Society Award for Bravery</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details job-listing__job-details-last">In 1996 I was awarded the Royal Humane Society's Award for Bravery. (I know this was 20 years ago, but if I didn't put this in here my mother would kill me.)</div>
+    </section>
+
+    <!-- h1 'And that is all' here -->
+    <a class="anchor" id="that-is-all"></a>
+    <section class="grid-8-column job-listing">
+      <h1 class="left-border-fillin"></h1>
+      <h1>Download</h1>
+      <div class="job-listing__job-details last-div-on-page">If you're the sort of person who wants a Word document&mdash;I'm truly sorry for you&mdash;this CV is available as a download here. It is identical to this page <em>at the time of download</em>, but this page will be updated periodically.</div>
+    </section>
+
+    <!-- TODO: Thoughts on extra words.
+               "I find an ugly process stressful"
+         TODO: You probably don't need to have multiple job-listing
+               sections per job listing; control your <p> or <ul> margins
+               or whatever and consolidate.
+         TODO: Fix up the CSS semantics, you're using 'job-listing' everywhere
+     -->
+
+  <div class="footer">
+    v1809.01 | #de2016fd | <a href="#">Back to the top</a>
   </div>
 
-  <main>
-    <section class="job-listing" id="job-leidos">
-      <div class="content-grid">
-        <div class="content-grid__year-in-margin">2018</div>
-        <div class="content-grid__company-name">Leidos <span class="content-grid__company-name-note">(formerly Lockheed Martin)</span></div>
-        <div class="content-grid__job-title">Technical Project Controller</div>
-      </div>
-      <div class="content">
-        <div class="content-grid__job-note">Melbourne &amp; Canberra</div>
-      </div>
-      <div class="content">
-        <div class="content-grid__job-details">
-          This is all the shit I did.
-        </div>
-      </div>
-    </section>
-    <section class="job-listing" id="job-byte">
-      <div class="content">
-        <div class="content-grid__year-in-margin">2015</div>
-        <div class="content-grid__company-name">Byte</div>
-        <div class="content-grid__job-title">Project Manager</div>
-      </div>
-      <div class="content">
-        <div class="content-grid__job-details">
-          This is all the shit I did.
-        </div>
-      </div>
-    </section>
-
-    <abbr title="This is my abbreviation">Some text to be abbreviated</abbr>
   </main>
+  
 </body>
-
 </html>
