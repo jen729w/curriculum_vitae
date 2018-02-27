@@ -97,6 +97,14 @@ p {
   padding-bottom: 10px;
 }
 
+footer {
+  position: relative;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
 /*Disable this on touch devices; they just don't get to see the tooltip*/
 @media (hover: none) {
   abbr {
@@ -159,7 +167,7 @@ a.anchor {
   }
 
   .header__navigation {
-    grid-column: 3 / span 4;
+    grid-column: 2 / span 6;
     padding-top: 10px;
     text-align: center;
     font-size: 0.8em;
@@ -244,6 +252,13 @@ a.anchor {
     grid-column: 2 / span 6;
     border-bottom: 1px dotted grey;
     padding-bottom: 20px;
+  }
+
+  .job-listing__full-width-description {
+    grid-column: 2 / span 6;
+    font-size: 1.6em;
+    /*Slight padding at the top to line it up with the year to its left*/
+    padding-top: 4px;
   }
 
 /*Specify the education grid elements*/
