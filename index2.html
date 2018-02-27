@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Testing 2</title>
+  <title>John Noble&mdash;Curriculum vitae&mdash;February 2018</title>
   <link href="style2.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Volkhov" rel="stylesheet">
 </head>
@@ -16,11 +16,25 @@
     <div class="header__page-title">Curriculum vitae<br />February 2018</div>
     <div class="header__contact-details"><a href="mailto:jn@jnoble.net">jn@jnoble.net</a><br /><a href="tel:+61415658257">0415 658 257</a></div>
     <div class="header__location">Melbourne, Australia</div>
+    <div class="header__navigation">
+      <a href="#about-me">About me</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#position-history">Position history</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#education">Education</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#references">References</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="#miscellanea">Miscellanea</a>
+    </div>
   </header>
 
   <!-- main is pushed below the fixed header with CSS -->
   <main>
 
+    <!-- Short version/long version note -->
+    <section class="grid-8-column">
+      <div class="short-long-version-note">This is the long version; for the (much) shorter version, <a href="/resume">click here</a>.</div>
+    </section>
+
+    <!-- h1 'About me' -->
+    <a class="anchor" id="about-me"></a>
     <section class="grid-8-column about-me">
       <h1 class="left-border-fillin"></h1>
       <h1>About me</h1>
@@ -44,7 +58,8 @@
       </div>
     </section>
 
-    <!-- h1 'Position history' is in this section -->
+    <!-- h1 'Position history' -->
+    <a class="anchor" id="position-history"></a>
     <section class="grid-8-column job-listing">
       <h1 class="left-border-fillin"></h1>
       <h1>Position history</h1>
@@ -90,7 +105,7 @@
       <div class="job-listing__company-name">Byte Information Technology</span></div>
       <div class="job-listing__job-title">Project Manager</div>
       <div class="job-listing__last_column_filler"></div>
-      <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a 1,000+ seat Wintel refresh program across 7 AU/NZ sites.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a 1,000+ seat Wintel refresh program across 7 Amcor sites in Australia &amp; New Zealand.</div>
     </section>
 
     <section class="grid-8-column job-listing">
@@ -207,7 +222,8 @@
       <div class="job-listing__job-details">We got there! Are you still reading?! My first job. I co-ordinated the rollout of Windows NT (as the customer rather than the vendor).</div>
     </section>
 
-    <!-- h1 'Education' is here; should fix up this CSS so it's semantically better -->
+    <!-- h1 'Education' -->
+    <a class="anchor" id="education"></a>
     <section class="grid-8-column job-listing">
       <h1 class="left-border-fillin"></h1>
       <h1>Education</h1>
@@ -230,7 +246,8 @@
       <div class="job-listing__job-details">Recently I've thought about doing one of the Project Management certifications but, honestly, I've met enough PMs who are &lsquo;PRINCE2 certified&rsquo; to know it's a waste of time. I spend my time refining <a href="https://johnnydecimal.com">Johnny.Decimal</a> instead.</div>
     </section>
 
-    <!-- h1 'References' is here -->
+    <!-- h1 'References' -->
+    <a class="anchor" id="references"></a>
     <section class="grid-8-column job-listing">
       <h1 class="left-border-fillin"></h1>
       <h1>References</h1>
@@ -251,7 +268,8 @@
       <div class="job-listing__job-details">Contact details for Alex and Diana are available on request.</div>
     </section>
 
-    <!-- h1 'Miscellanea' is here -->
+    <!-- h1 'Miscellanea' -->
+    <a class="anchor" id="miscellanea"></a>
     <section class="grid-8-column job-listing">
       <h1 class="left-border-fillin"></h1>
       <h1>Miscellanea</h1>
@@ -315,6 +333,7 @@
          TODO: You probably don't need to have multiple job-listing
                sections per job listing; control your <p> or <ul> margins
                or whatever and consolidate.
+         TODO: Fix up the CSS semantics, you're using 'job-listing' everywhere
      -->
 
   </main>
