@@ -12,10 +12,14 @@
       if(displayCVOrResume === 'cv') {
         // Currently showing CV; switch to resume by hiding elements
         $('.hide-if-resume').hide();
+        $('#switch-to-resume').addClass('hidden');
+        $('#switch-to-cv').removeClass('hidden');
         displayCVOrResume = 'resume';
       } else {
         // Currently showing resume; switch to CV by showing elements
         $('.hide-if-resume').show();
+        $('#switch-to-cv').addClass('hidden');
+        $('#switch-to-resume').removeClass('hidden');
         displayCVOrResume = 'cv';
       }
     }
@@ -46,7 +50,8 @@
 
     <!-- Short version/long version note -->
     <section class="grid-8-column">
-      <div class="short-long-version-note">This is the long version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.<div>
+      <div class="short-long-version-note" id="switch-to-resume">This is the long version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
+      <div class="short-long-version-note hidden" id="switch-to-cv">This is the short version; for the (much) longer version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
     </section>
 
     <!-- h1 'About me' -->
@@ -58,14 +63,14 @@
       <div class="about-me__content">Incredibly process-driven, in 2010 I invented a system to organise projects which I use across every project I manage. It’s called <a href="https://johnnydecimal.com">Johnny.Decimal</a> and you should use it in your projects (or hire me to do that for you).</div>
       <div class="about-me__content hide-if-resume">I’m a problem solver, and I’ll get bored if there isn’t something to do. I’m a people person and I work by consensus rather than conflict. I’m a hard worker who puts his noise-cancelling headphones on and gets on with it.</div>
 
-      <h2 class="left">What am I looking for?</h2>
-      <h2 class="right">What is my rate?</h2>
-      <div class="about-me__content-left">
+      <h2 class="left hide-if-resume">What am I looking for?</h2>
+      <h2 class="right hide-if-resume">What is my rate?</h2>
+      <div class="about-me__content-left hide-if-resume">
         <p>After just completing a 3-year project, I am looking for something a little shorter.</p>
         <p>I'd rather be smashed with a difficult project for a couple of months than become part of your furniture. <abbr title="It’s also a lot cheaper.">IKEA is good for furniture</abbr>. Me, not so much.</p>
         <p>Ideally you’ll have something that will keep me busy for a couple of weeks to a couple of months.</p>
       </div>
-      <div class="about-me__content-right">From $1,200&ndash;$1,500 per day (ex. GST), depending on:
+      <div class="about-me__content-right hide-if-resume">From $1,200&ndash;$1,500 per day (ex. GST), depending on:
         <ul>
           <li>The nature of the job</li>
           <li>The length of the contract</li>
@@ -88,7 +93,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Responsible for all aspects of the hardware implementation of the Department of Defence’s Centralised Processing program, including:
         <ul>
           <li>The 3-year, 10,000+ line schedule, which was successfully delivered on time
-            <ul>
+            <ul class="hide-if-resume">
               <!-- TODO: fix the abbr tag on mobile -->
               <li>I ran the schedule, and the team implementing it, from hardware procurement through delivery, asseting, physical installation (including end-to-end network cabling), to the point of power-on; at this point I handed off to the core infrastructure software deployment team</li>
               <li>We consolidated 200+ data centres to 4 cores, 7 regionals, and 3 internationals</li>
@@ -97,7 +102,7 @@
             </ul>
           </li>
           <li>Management of all physical data centre-related contract deliverable items to the customer
-            <ul>
+            <ul class="hide-if-resume">
               <li>Site surveys prior to installation to ensure availability of power, cooling, and rack space</li>
               <li>Fully audited hardware installation details; every item, including all cables, barcoded and verified</li>
               <li>Full asset details for billing, maintenance, and BAU support (~2,500 items of hardware)</li>
@@ -105,7 +110,7 @@
             </ul>
           </li>
           <li>Team lead for the Network, Security, Deployment, and Tools &amp; Process teams
-            <ul>
+            <ul class="hide-if-resume">
               <li>Between 10 &amp; 15 people, depending on the project phase, across Melbourne &amp; Canberra</li>
               <li>&ldquo;Best team lead ever.&rdquo; &ndash;My mate Cameron</li>
             </ul>
