@@ -63,6 +63,7 @@ h2.right {
 
 abbr {
   border-bottom: 1px dashed lightgrey;
+  text-decoration: none;
 }
 
 /*Disable this on touch devices; they just don’t get to see the tooltip*/
