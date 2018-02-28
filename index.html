@@ -22,11 +22,13 @@
         // Currently showing CV; switch to resume by hiding elements
         $('.hide-if-resume').hide();
         $('.hide-if-cv').show();
+        $('.job-listing__job-details-will-be-last-if-resume').addClass('job-listing__job-details-last');
         displayCVOrResume = 'resume';
       } else {
         // Currently showing resume; switch to CV by showing elements
         $('.hide-if-resume').show();
         $('.hide-if-cv').hide();
+        $('.job-listing__job-details-will-be-last-if-resume').removeClass('job-listing__job-details-last');
         displayCVOrResume = 'cv';
       }
     }
@@ -58,8 +60,8 @@
 
     <!-- Short version/long version note -->
     <section class="grid-8-column">
-      <div class="short-long-version-note hide-if-resume">This is the long version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
-      <div class="short-long-version-note hide-if-cv">This is the short version; for the (much) longer version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
+      <div class="short-long-version-note hide-if-resume">This is the <strong>long</strong> version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
+      <div class="short-long-version-note hide-if-cv">This is the <strong>short</strong> version; for the (much) longer version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
     </section>
 
     <!-- h1 'About me' -->
@@ -123,7 +125,7 @@
               <li>&ldquo;Best team lead ever.&rdquo; &ndash;My mate Cameron</li>
             </ul>
           </li>
-          <li>Planned, managed and implemented core switch upgrades (Cisco Nexus 7K series) at 2 very significant Defence locations; completed over long weekends with no downtime</li>
+          <li class="hide-if-resume">Planned, managed and implemented core switch upgrades (Cisco Nexus 7K series) at 2 very significant Defence locations; completed over long weekends with no downtime</li>
         </ul>
       </div>
     </section>
@@ -133,10 +135,13 @@
       <div class="job-listing__company-name">Byte Information Technology</div>
       <div class="job-listing__job-title">Project Manager</div>
       <div class="job-listing__last_column_filler"></div>
-      <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a 1,000+ seat Wintel refresh program across 7 Amcor sites in Australia &amp; New Zealand.</div>
+      <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a 1,000+ seat Wintel refresh program across
+        <span class="hide-if-resume">7 Amcor sites in Australia &amp; New Zealand.</span>
+        <span class="hide-if-cv">7 AU/NZ sites.</span>
+      </div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2014</div>
       <div class="job-listing__company-name">National Australia Bank</div>
       <div class="job-listing__job-title">Project Manager</div>
@@ -144,7 +149,6 @@
       <div class="job-listing__job-details">I attempted to be a productive PM on the infamous NextGen project; I failed. I almost didn’t put this job in here, but then realised it’s instructive as to who I am <em>not</em>.</div>
       <div class="job-listing__job-details">This was a project without a well defined schedule: a milestone was a diamond drawn in Visio! No dependencies, no accountability. Two subcontractors in direct competition with each other working towards the same goal on the same project. It was an utter shambles.</div>
       <div class="job-listing__job-details job-listing__job-details-last">It was the worst job I’ve ever had and I’ll never do anything like it again. Thanks for listening.</div>
-
     </section>
 
     <section class="grid-8-column job-listing">
@@ -153,8 +157,8 @@
       <div class="job-listing__job-title">Service Delivery Manager</div>
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-note">Melbourne &amp; Bangalore, India</div>
-      <div class="job-listing__job-details">Migrated the NAB’s 1st level Service Desk to a new offshore desk based in Bangalore, India.</div>
-      <div class="job-listing__job-details job-listing__job-details-last">Designed improved escalation and feedback processes to anticipate and prevent customer dissatisfaction events. Improved the desk’s knowledge tools to enable agents to discover solutions. Customer satisfaction increased from ~65% at arrival to an on-target 85+%.</div>
+      <div class="job-listing__job-details job-listing__job-details-will-be-last-if-resume">Migrated the NAB’s 1st level Service Desk to a new offshore desk based in Bangalore, India.</div>
+      <div class="job-listing__job-details job-listing__job-details-last hide-if-resume">Designed improved escalation and feedback processes to anticipate and prevent customer dissatisfaction events. Improved the desk’s knowledge tools to enable agents to discover solutions. Customer satisfaction increased from ~65% at arrival to an on-target 85+%.</div>
     </section>
 
     <section class="grid-8-column job-listing">

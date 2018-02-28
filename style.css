@@ -272,6 +272,10 @@ a.anchor {
     padding-top: 4px;
   }
 
+  .job-listing__job-details-will-be-last-if-resume {
+    /*This isn't used for styling, only selection*/
+  }
+
 /*Specify the education grid elements*/
   .education {
     /*Anything specific to the grid?*/
