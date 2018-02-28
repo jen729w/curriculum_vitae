@@ -335,7 +335,7 @@
       <div class="job-listing__full-width-description">Other professional studies</div>
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-details">Through the years I’ve done the odd qualification here and there&mdash;Microsoft, Citrix, the usual stuff&mdash;but I’ve always found it pointless. You don’t learn anything.</div>
-      <div class="job-listing__job-details">Recently I’ve thought about doing one of the Project Management certifications but, honestly, I’ve met enough PMs who are &lsquo;PRINCE2 certified&rsquo; to know it’s a waste of time. I spend my time refining <a href="https://johnnydecimal.com">Johnny.Decimal</a> instead.</div>
+      <div class="job-listing__job-details">Recently I’ve thought about doing one of the Project Management certifications but I’ve met enough PMs who are &lsquo;PRINCE2 certified&rsquo; to know it’s a waste of money. I spend my time refining <a href="https://johnnydecimal.com">Johnny.Decimal</a> instead.</div>
     </section>
 
     <!-- h1 'References' -->
@@ -402,21 +402,7 @@
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-details">The current issue with <a href="https://johnnydecimal.com">Johnny.Decimal</a> is that you need some sort of system to keep track of your database of numbers. I use Google Sheets at home and generally fall back to a SharePoint List when I’m working for someone else, but both solutions are clunky.</div>
       <div class="job-listing__job-details">I need a custom solution, so I decided to build one. I’m in the process of teaching myself the core web technologies: HTML5 &amp; CSS3 (which I’ve used to hand-code the page you’re reading, from scratch), with Javascript &amp; Node.js/Express for actual appliation functionality.</div>
-      <div class="job-listing__job-details job-listing__job-details-last">The whole thing will be hosted on a Linode instance; I know enough *nix to maintain my own hosting services.</div>
-    </section>
-
-    <section class="grid-8-column job-listing hide-if-resume">
-      <div class="job-listing__year-in-margin">2013</div>
-      <div class="job-listing__full-width-description">I’m a marriage celebrant</div>
-      <div class="job-listing__last_column_filler"></div>
-      <div class="job-listing__job-details job-listing__job-details-last">In 2013 I became a Commonwealth-registered marriage celebrant so that I could marry my best friends. I’ve done 3 since then and have a couple lined up for this year.</div>
-    </section>
-
-    <section class="grid-8-column job-listing hide-if-resume">
-      <div class="job-listing__year-in-margin">1996</div>
-      <div class="job-listing__full-width-description">Royal Humane Society Award for Bravery</div>
-      <div class="job-listing__last_column_filler"></div>
-      <div class="job-listing__job-details job-listing__job-details-last">In 1996 I was awarded the Royal Humane Society’s Award for Bravery. (I know this was 20 years ago, but if I didn’t put this in here my mother would kill me.)</div>
+      <div class="job-listing__job-details">The whole thing will be hosted on a Linode instance; I know enough *nix to maintain my own hosting services.</div>
     </section>
 
     <!-- h1 'And that is all' here -->
@@ -425,20 +411,14 @@
       <h1 class="left-border-fillin"></h1>
       <h1>Download my resume as a Word document</h1>
       <div class="job-listing__job-details last-div-on-page">
-        The shorter version of this page is available as <a href="#">John Noble - Resume - Febuary 2018.docx</a>. The
+        <span class="hide-if-resume">The <a href="#" onclick="toggleCVOrResume()">shorter version</a></span>
+        <span class="hide-if-cv">This shorter version</span>
+        of this page is available as <a href="#">John Noble - Resume - Febuary 2018.docx</a>. The
         <span class="hide-if-cv"><a href="#" onclick="toggleCVOrResume()">longer version</a></span>
         <span class="hide-if-resume">longer version</span>
         <span class="hide-if-resume">(the page you're reading now)</span> is only available online.
       </div>
     </section>
-
-    <!-- TODO: Thoughts on extra words.
-               "I find an ugly process stressful"
-         TODO: You probably don’t need to have multiple job-listing
-               sections per job listing; control your <p> or <ul> margins
-               or whatever and consolidate.
-         TODO: Fix up the CSS semantics, you’re using 'job-listing' everywhere
-     -->
 
   <div class="footer">
     v1809.01 | <a href="#">Back to the top</a>
