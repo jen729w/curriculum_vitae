@@ -7,32 +7,40 @@
   <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
+    // When we start, we're in CV mode
     let displayCVOrResume = 'cv';
+
+    function init() {
+      // Hide all of the 'hide in CV mode' elements at the beginning
+      $('.hide-if-cv').hide();
+      console.log('init run');
+    }
+
     function toggleCVOrResume() {
+      console.log(`Toggling; displayCVOrResume is currently ${displayCVOrResume}`);
       if(displayCVOrResume === 'cv') {
         // Currently showing CV; switch to resume by hiding elements
         $('.hide-if-resume').hide();
-        $('#switch-to-resume').addClass('hidden');
-        $('#switch-to-cv').removeClass('hidden');
+        $('.hide-if-cv').show();
         displayCVOrResume = 'resume';
       } else {
         // Currently showing resume; switch to CV by showing elements
         $('.hide-if-resume').show();
-        $('#switch-to-cv').addClass('hidden');
-        $('#switch-to-resume').removeClass('hidden');
+        $('.hide-if-cv').hide();
         displayCVOrResume = 'cv';
       }
     }
   </script>
 </head>
-<body>
+<body onload="init()">
 
   <!-- Johnny: don’t forget you have TODOs throughout -->
 
   <!-- header has 2 grid rows and width defined in CSS -->
   <header class="grid-8-column">
     <div class="header__your-name">John Noble</div>
-    <div class="header__page-title">Curriculum vitae<br />February 2018</div>
+    <div class="header__page-title hide-if-resume">Curriculum vitae<br />February 2018</div>
+    <div class="header__page-title hide-if-cv">Resume<br />February 2018</div>
     <div class="header__contact-details"><a href="mailto:jn@jnoble.net">jn@jnoble.net</a><br /><a href="tel:+61415658257">0415 658 257</a></div>
     <div class="header__location">Melbourne, Australia</div>
     <div class="header__navigation">
@@ -50,8 +58,8 @@
 
     <!-- Short version/long version note -->
     <section class="grid-8-column">
-      <div class="short-long-version-note" id="switch-to-resume">This is the long version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
-      <div class="short-long-version-note hidden" id="switch-to-cv">This is the short version; for the (much) longer version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
+      <div class="short-long-version-note hide-if-resume">This is the long version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
+      <div class="short-long-version-note hide-if-cv">This is the short version; for the (much) longer version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
     </section>
 
     <!-- h1 'About me' -->
