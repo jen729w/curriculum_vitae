@@ -22,12 +22,14 @@
         // Currently showing CV; switch to resume by hiding elements
         $('.hide-if-resume').hide();
         $('.hide-if-cv').show();
+        $('.job-listing__job-note').hide();
         $('.job-listing__job-details-will-be-last-if-resume').addClass('job-listing__job-details-last');
         displayCVOrResume = 'resume';
       } else {
         // Currently showing resume; switch to CV by showing elements
         $('.hide-if-resume').show();
         $('.hide-if-cv').hide();
+        $('.job-listing__job-note').hide();
         $('.job-listing__job-details-will-be-last-if-resume').removeClass('job-listing__job-details-last');
         displayCVOrResume = 'cv';
       }
@@ -45,7 +47,7 @@
     <div class="header__page-title hide-if-cv">Resume<br />February 2018</div>
     <div class="header__contact-details"><a href="mailto:jn@jnoble.net">jn@jnoble.net</a><br /><a href="tel:+61415658257">0415 658 257</a></div>
     <div class="header__location">Melbourne, Australia</div>
-    <div class="header__navigation">
+    <div class="header__navigation hide-if-resume">
       <a href="#about-me">About me</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <a href="#position-history">Position history</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <a href="#education">Education</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -53,6 +55,7 @@
       <a href="#miscellanea">Miscellanea</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <a href="#that-is-all">Download</a>
     </div>
+    <div class="header__navigation hide-if-cv">&nbsp;</div>
   </header>
 
   <!-- main is pushed below the fixed header with CSS -->
@@ -70,7 +73,10 @@
       <h1 class="left-border-fillin"></h1>
       <h1>About me</h1>
       <div class="about-me__content">For 20 years I have worked in a diverse variety of roles across 50+ countries. I am now an NV2-cleared Project Manager based in Melbourne. I love to travel (but not full-time).</div>
-      <div class="about-me__content">Incredibly process-driven, in 2010 I invented a system to organise projects which I use across every project I manage. It’s called <a href="https://johnnydecimal.com">Johnny.Decimal</a> and you should use it in your projects (or hire me to do that for you).</div>
+      <div class="about-me__content">Incredibly process-driven, in 2010 I invented a system to organise projects which I use across every project I manage. It’s called <a href="https://johnnydecimal.com">Johnny.Decimal</a> and
+        <span class="hide-if-resume">you should use it in your projects (or hire me to do that for you).</span>
+        <span class="hide-if-cv">is documented at <a href="https://johnnydecimal.com">johnnydecimal.com</a>.</span>
+      </div>
       <div class="about-me__content hide-if-resume">I’m a problem solver, and I’ll get bored if there isn’t something to do. I’m a people person and I work by consensus rather than conflict. I’m a hard worker who puts his noise-cancelling headphones on and gets on with it.</div>
 
       <h2 class="left hide-if-resume">What am I looking for?</h2>
@@ -96,7 +102,7 @@
       <h1 class="left-border-fillin"></h1>
       <h1>Position history</h1>
       <div class="job-listing__year-in-margin">2018</div>
-      <div class="job-listing__company-name">Leidos <span class="job-listing__company-name-note">(formerly Lockheed Martin)</span></div>
+      <div class="job-listing__company-name">Leidos <span class="job-listing__company-name-note">(was Lockheed Martin)</span></div>
       <div class="job-listing__job-title">Technical Project Controller</div>
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-note">Melbourne &amp; Canberra</div>
@@ -161,7 +167,7 @@
       <div class="job-listing__job-details job-listing__job-details-last hide-if-resume">Designed improved escalation and feedback processes to anticipate and prevent customer dissatisfaction events. Improved the desk’s knowledge tools to enable agents to discover solutions. Customer satisfaction increased from ~65% at arrival to an on-target 85+%.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2011</div>
       <div class="job-listing__company-name">Victorian Building Authority</div>
       <div class="job-listing__job-title">Solution Architect</div>
@@ -177,12 +183,14 @@
       <div class="job-listing__job-title">Producer</div>
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-note">Melbourne</div>
-      <div class="job-listing__job-details">Project managed, from inception, a Graeme Murphy contemporary dance production (<a href="https://www.broadsheet.com.au/melbourne/event/suite-synergy">‘Suite Synergy’</a>), seen by over 5,000 people at the State Theatre, Melbourne and Star City, Sydney.</div>
-      <div class="job-listing__job-details">This was the greatest job I’ve ever had. Me and a couple of friends got involved with this project and it turned from a thing we did at night in to our full-time job. It consumed us for a year: we did everything, and we made it up as we went.</div>
-      <div class="job-listing__job-details job-listing__job-details-last">We opened in March 2011 at the State Theatre in Melbourne. The show toured to Sydney, and we had plans to take it to Brisbane and Perth until we realised that we had no money left. You should listen to people who tell you there’s no money in the arts.</div>
+      <div class="job-listing__job-details job-listing__job-details-will-be-last-if-resume">Project managed, from inception, a Graeme Murphy contemporary dance production (<a href="https://www.broadsheet.com.au/melbourne/event/suite-synergy">‘Suite Synergy’</a>), seen by more than 5,000 people at the State Theatre, Melbourne and Star City, Sydney.</div>
+      <div class="job-listing__job-details hide-if-resume">This was the greatest job I’ve ever had. Me and a couple of friends got involved with this project and it turned from a thing we did at night in to our full-time job. It consumed us for a year: we did everything, and we made it up as we went.</div>
+      <div class="job-listing__job-details job-listing__job-details-last hide-if-resume">We opened in March 2011 at the State Theatre in Melbourne. The show toured to Sydney, and we had plans to take it to Brisbane and Perth until we realised that we had no money left. You should listen to people who tell you there’s no money in the arts.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+
+
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2010</div>
       <div class="job-listing__company-name">National Australia Bank</div>
       <div class="job-listing__job-title">Service Development Manager</div>
@@ -191,7 +199,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Planned and delivered the migration of 3,500 users from legacy platforms to a centralised remote access solution (‘Access NAB’) based on Citrix XenDesktop/XenApps; integrated the support processes to BAU and transitioned business processes offshore.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2009</div>
       <div class="job-listing__company-name">National Australia Bank</div>
       <div class="job-listing__job-title">Desktop Support Manager</div>
@@ -201,7 +209,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Managed the transition of the bank’s 1st level support function from Telstra to IBM; assisted the new desk in Queensland with process, training and quality issues.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2007</div>
       <div class="job-listing__company-name">National Australia Bank</div>
       <div class="job-listing__job-title">Senior Technical Specialist</div>
@@ -210,7 +218,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Implemented the bank’s new nationwide XP desktop solution; 3rd level technical specialist deep in the Windows Server admin tools.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2006</div>
       <div class="job-listing__company-name">Department of Justice Victoria</div>
       <div class="job-listing__job-title">Senior Technical Consultant</div>
@@ -220,7 +228,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Virtualised a number of critical legacy systems (VMware) as part of the migration to mitigate the risks of ageing hardware.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2005</div>
       <div class="job-listing__company-name">gen-i</div>
       <div class="job-listing__job-title">Senior Technical Consultant</div>
@@ -229,7 +237,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Consultant providing Microsoft installation and support services to gen-i’s customers.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2003</div>
       <div class="job-listing__company-name">Getech</div>
       <div class="job-listing__job-title">Senior Technical Consultant</div>
@@ -238,7 +246,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Consultant providing Microsoft installation and support services to Getech’s customers.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2001</div>
       <div class="job-listing__company-name">The British Council</div>
       <div class="job-listing__job-title">Global Implementation Manager</div>
@@ -247,7 +255,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a global SOE rollout in a bunch of countries around the world. This was back in the day when you still got flown Business everywhere. Good times.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1999</div>
       <div class="job-listing__company-name">The National Grid</div>
       <div class="job-listing__job-title">Rollout Team Leader</div>
@@ -256,7 +264,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Responsible for a team of 15, providing support to rollout teams operating around the country: account migration, 2nd/3rd line support and server deployment.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1999</div>
       <div class="job-listing__company-name">EDS/Xerox</div>
       <div class="job-listing__job-title">European Rollout Team Leader</div>
@@ -265,7 +273,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Responsible for teams of up to 5 engineers deploying a standard desktop to over 2,000 desktops across Europe and Scandinavia.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1998</div>
       <div class="job-listing__company-name">Xerox</div>
       <div class="job-listing__job-title">Rollout Team Leader</div>
@@ -274,9 +282,42 @@
       <div class="job-listing__job-details">We got there! Are you still reading?! My first job. I co-ordinated the rollout of Windows NT (as the customer rather than the vendor).</div>
     </section>
 
+    <!-- 'NAB various roles...' to display in resume mode -->
+    <section class="grid-8-column job-listing hide-if-cv">
+      <div class="job-listing__year-in-margin">2010</div>
+      <div class="job-listing__company-name">National Australia Bank</div>
+      <div class="job-listing__job-title">various roles</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note"></div>
+      <div class="job-listing__job-details job-listing__job-details-last">
+        <ul>
+          <li>Planned and executed the migration of 3,500 users from legacy platforms to a centralised remote access solution (‘Access NAB’) &ndash; 2 years</li>
+          <li>Managed the bank’s 2nd level desktop support team &ndash; 1 year</li>
+          <li>Managed the transition of the 1st level support function from Telstra to IBM &ndash; 1 year</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 'Before that...' to display in resume mode -->
+    <section class="grid-8-column job-listing hide-if-cv">
+      <div class="job-listing__year-in-margin">2006</div>
+      <div class="job-listing__company-name">Before that...</div>
+      <div class="job-listing__job-title"></div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-note"></div>
+      <div class="job-listing__job-details last-div-on-page">
+        <ul>
+          <li>Migrated a data centre for the Department of Justice Victoria</li>
+          <li>Deployed thousands of users for The British Council in places like Nigeria, Colombia, and Kosovo; before that, for EDS/Xerox across Northern Europe</li>
+          <li>Technical Consultant for a couple of companies both here and in the UK</li>
+          <li>3 years of a 4 year BSc Computer Science degree at the University of York, UK</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- h1 'Education' -->
     <a class="anchor" id="education"></a>
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <h1 class="left-border-fillin"></h1>
       <h1>Education</h1>
       <div class="job-listing__year-in-margin">1997</div>
@@ -289,7 +330,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">And so, I didn’t finish my degree and I stayed at Xerox. It has turned out to be one of the most serendipitous decisions I’ve ever made; the Xerox job led to work all around Europe, which led to my job with The British Council which took me all around the world. You don’t get to travel the world on expenses in a graduate position, no sir.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin"></div>
       <div class="job-listing__full-width-description">Other professional studies</div>
       <div class="job-listing__last_column_filler"></div>
@@ -299,7 +340,7 @@
 
     <!-- h1 'References' -->
     <a class="anchor" id="references"></a>
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <h1 class="left-border-fillin"></h1>
       <h1>References</h1>
       <h2 class="left">Alex Garner</h2>
@@ -321,7 +362,7 @@
 
     <!-- h1 'Miscellanea' -->
     <a class="anchor" id="miscellanea"></a>
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <h1 class="left-border-fillin"></h1>
       <h1>Miscellanea</h1>
       <div class="job-listing__year-in-margin"></div>
@@ -335,7 +376,7 @@
       <div class="job-listing__job-details job-listing__job-details-last">Now, unless forced to do otherwise at work, I live on a Mac.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin"></div>
       <div class="job-listing__company-name">Tools I use</div>
       <div class="job-listing__job-title"></div>
@@ -355,7 +396,7 @@
       </div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2018</div>
       <div class="job-listing__full-width-description">HTML5/CSS3/Node.js development</div>
       <div class="job-listing__last_column_filler"></div>
@@ -364,14 +405,14 @@
       <div class="job-listing__job-details job-listing__job-details-last">The whole thing will be hosted on a Linode instance; I know enough *nix to maintain my own hosting services.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2013</div>
       <div class="job-listing__full-width-description">I’m a marriage celebrant</div>
       <div class="job-listing__last_column_filler"></div>
       <div class="job-listing__job-details job-listing__job-details-last">In 2013 I became a Commonwealth-registered marriage celebrant so that I could marry my best friends. I’ve done 3 since then and have a couple lined up for this year.</div>
     </section>
 
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1996</div>
       <div class="job-listing__full-width-description">Royal Humane Society Award for Bravery</div>
       <div class="job-listing__last_column_filler"></div>
@@ -380,7 +421,7 @@
 
     <!-- h1 'And that is all' here -->
     <a class="anchor" id="that-is-all"></a>
-    <section class="grid-8-column job-listing">
+    <section class="grid-8-column job-listing hide-if-resume">
       <h1 class="left-border-fillin"></h1>
       <h1>Download, and the end...</h1>
       <div class="job-listing__job-details">If you’re the sort of person who wants a Word document&mdash;I’m truly sorry for you&mdash;this CV is available as a download here. It is identical to this page <em>at the time of download</em>, but this page will be updated periodically.</div>

@@ -100,8 +100,14 @@ a:active {
 }
 
 p {
+  /*Clear default styles*/
   margin: 0;
   padding-bottom: 10px;
+}
+
+ul {
+  /*Clear default styles*/
+  margin: 0;
 }
 
 .footer {
@@ -154,6 +160,7 @@ a.anchor {
 /*Specify the header grid elements*/
   .header__your-name {
     grid-column: 2 / span 4;
+    font-weight: 700;
     font-size: 2em;
   }
 
@@ -161,6 +168,7 @@ a.anchor {
     grid-column: 6 / span 2;
     justify-self: end;
     text-align: right;
+    font-weight: 700;
     font-size: 1.6em;
   }
 
