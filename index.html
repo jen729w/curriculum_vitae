@@ -5,6 +5,21 @@
   <title>John Noble&mdash;Curriculum vitae&mdash;February 2018</title>
   <link href="style.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    let displayCVOrResume = 'cv';
+    function toggleCVOrResume() {
+      if(displayCVOrResume === 'cv') {
+        // Currently showing CV; switch to resume by hiding elements
+        $('.hide-if-resume').hide();
+        displayCVOrResume = 'resume';
+      } else {
+        // Currently showing resume; switch to CV by showing elements
+        $('.hide-if-resume').show();
+        displayCVOrResume = 'cv';
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -31,7 +46,7 @@
 
     <!-- Short version/long version note -->
     <section class="grid-8-column">
-      <div class="short-long-version-note">This is the long version; for the (much) shorter version, <a href="/resume">click here</a>.<div>
+      <div class="short-long-version-note">This is the long version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.<div>
     </section>
 
     <!-- h1 'About me' -->
@@ -41,7 +56,7 @@
       <h1>About me</h1>
       <div class="about-me__content">For 20 years I have worked in a diverse variety of roles across 50+ countries. I am now an NV2-cleared Project Manager based in Melbourne. I love to travel (but not full-time).</div>
       <div class="about-me__content">Incredibly process-driven, in 2010 I invented a system to organise projects which I use across every project I manage. It’s called <a href="https://johnnydecimal.com">Johnny.Decimal</a> and you should use it in your projects (or hire me to do that for you).</div>
-      <div class="about-me__content">I’m a problem solver, and I’ll get bored if there isn’t something to do. I’m a people person and I work by consensus rather than conflict. I’m a hard worker who puts his noise-cancelling headphones on and gets on with it.</div>
+      <div class="about-me__content hide-if-resume">I’m a problem solver, and I’ll get bored if there isn’t something to do. I’m a people person and I work by consensus rather than conflict. I’m a hard worker who puts his noise-cancelling headphones on and gets on with it.</div>
 
       <h2 class="left">What am I looking for?</h2>
       <h2 class="right">What is my rate?</h2>
