@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114918394-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114918394-1');
+  </script>
   <meta charset="UTF-8">
   <title>John Noble&mdash;Curriculum vitae&mdash;February 2018</title>
   <link href="style.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
   <script>
     // When we start, we're in CV mode
     let displayCVOrResume = 'cv';
@@ -14,6 +24,13 @@
       // Hide all of the 'hide in CV mode' elements at the beginning
       $('.hide-if-cv').hide();
       console.log('init run');
+
+      // Detect which version of IE we're using, and un-hide a massive div
+      // at the top of the page if it's IE<=11.
+      const browserIE11 = detectIE();
+      if (browserIE11) {
+        $('.IE11-warning').show();
+      }
     }
 
     function toggleCVOrResume() {
@@ -39,6 +56,10 @@
 <body onload="init()">
 
   <!-- Johnny: don’t forget you have TODOs throughout -->
+
+  <div class="IE11-warning hidden">
+    You are using Internet Explorer 11 or lower. This site has been built using CSS Grid, which is unsupported by IE11. You should really get a newer browser. Sorry if this site looks crappy; I'll see if I can fix it in the future, but honestly I'm not going to spend a lot of time doing that.
+  </div>
 
   <!-- header has 2 grid rows and width defined in CSS -->
   <header class="grid-8-column">

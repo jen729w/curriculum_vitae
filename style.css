@@ -130,6 +130,14 @@ ul {
   display: none;
 }
 
+.IE11-warning {
+  background: black;
+  color: lightgrey;
+  font-size: 2em;
+  text-align: center;
+  padding: 100px;
+}
+
 /*Nice hack from
   https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
   to solve the 'clicking a #link pushes the content in to the header' issue.*/
