@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114918394-1"></script>
@@ -17,50 +18,49 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
   <script>
-    // When we start, we're in CV mode
-    let displayCVOrResume = 'cv';
+  // When we start, we're in CV mode
+  let displayCVOrResume = 'cv';
 
-    function init() {
-      // Hide all of the 'hide in CV mode' elements at the beginning
+  function init() {
+    // Hide all of the 'hide in CV mode' elements at the beginning
+    $('.hide-if-cv').hide();
+    console.log('init run');
+
+    // Detect which version of IE we're using, and un-hide a massive div
+    // at the top of the page if it's IE<=11.
+    const browserIE11 = detectIE();
+    if (browserIE11) {
+      $('.IE11-warning').show();
+    }
+  }
+
+  function toggleCVOrResume() {
+    console.log(`Toggling; displayCVOrResume is currently ${displayCVOrResume}`);
+    if (displayCVOrResume === 'cv') {
+      // Currently showing CV; switch to resume by hiding elements
+      $('.hide-if-resume').hide();
+      $('.hide-if-cv').show();
+      $('.job-listing__job-note').hide();
+      $('.job-listing__job-details-will-be-last-if-resume').addClass('job-listing__job-details-last');
+      displayCVOrResume = 'resume';
+    } else {
+      // Currently showing resume; switch to CV by showing elements
+      $('.hide-if-resume').show();
       $('.hide-if-cv').hide();
-      console.log('init run');
-
-      // Detect which version of IE we're using, and un-hide a massive div
-      // at the top of the page if it's IE<=11.
-      const browserIE11 = detectIE();
-      if (browserIE11) {
-        $('.IE11-warning').show();
-      }
+      $('.job-listing__job-note').hide();
+      $('.job-listing__job-details-will-be-last-if-resume').removeClass('job-listing__job-details-last');
+      displayCVOrResume = 'cv';
     }
-
-    function toggleCVOrResume() {
-      console.log(`Toggling; displayCVOrResume is currently ${displayCVOrResume}`);
-      if(displayCVOrResume === 'cv') {
-        // Currently showing CV; switch to resume by hiding elements
-        $('.hide-if-resume').hide();
-        $('.hide-if-cv').show();
-        $('.job-listing__job-note').hide();
-        $('.job-listing__job-details-will-be-last-if-resume').addClass('job-listing__job-details-last');
-        displayCVOrResume = 'resume';
-      } else {
-        // Currently showing resume; switch to CV by showing elements
-        $('.hide-if-resume').show();
-        $('.hide-if-cv').hide();
-        $('.job-listing__job-note').hide();
-        $('.job-listing__job-details-will-be-last-if-resume').removeClass('job-listing__job-details-last');
-        displayCVOrResume = 'cv';
-      }
-    }
+  }
   </script>
 </head>
+
 <body onload="init()">
-
   <!-- Johnny: don’t forget you have TODOs throughout -->
-
   <div class="IE11-warning hidden">
-    You are using Internet Explorer 11 or lower. This site has been built using CSS Grid, which is unsupported by IE11. You should really get a newer browser. Sorry if this site looks crappy; I'll see if I can fix it in the future, but honestly I'm not going to spend a lot of time doing that.
+    <p>You are using Internet Explorer 11 or lower. This site has been built using CSS Grid, which is unsupported by IE11. You should really get a newer browser. Sorry if this site looks crappy; I'll see if I can fix it in the future, but honestly I'm not going to spend a lot of time doing that.</p>
+    <p>November 2018 update: I'm never going to do that. Get a better browser. xo</p>
   </div>
-
   <!-- header has 2 grid rows and width defined in CSS -->
   <header class="grid-8-column">
     <div class="header__your-name">John Noble</div>
@@ -78,16 +78,13 @@
     </div>
     <div class="header__navigation hide-if-cv">&nbsp;</div>
   </header>
-
   <!-- main is pushed below the fixed header with CSS -->
   <main>
-
     <!-- Short version/long version note -->
     <section class="grid-8-column">
       <div class="short-long-version-note hide-if-resume">This is the <strong>long</strong> version; for the (much) shorter version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
       <div class="short-long-version-note hide-if-cv">This is the <strong>short</strong> version; for the (much) longer version, <a href="#" onClick="toggleCVOrResume()">click here</a>.</div>
     </section>
-
     <!-- h1 'About me' -->
     <a class="anchor" id="about-me"></a>
     <section class="grid-8-column about-me">
@@ -99,7 +96,6 @@
         <span class="hide-if-cv">is documented at <a href="https://johnnydecimal.com">johnnydecimal.com</a>.</span>
       </div>
       <div class="about-me__content hide-if-resume">I’m a problem solver, and I’ll get bored if there isn’t something to do. I’m a people person and I work by consensus rather than conflict. I’m a hard worker who puts his noise-cancelling headphones on and gets on with it.</div>
-
       <h2 class="left hide-if-resume">What am I looking for?</h2>
       <h2 class="right hide-if-resume">What is my rate?</h2>
       <div class="about-me__content-left hide-if-resume">
@@ -116,12 +112,24 @@
         </ul>
       </div>
     </section>
-
     <!-- h1 'Position history' -->
     <a class="anchor" id="position-history"></a>
     <section class="grid-8-column job-listing">
       <h1 class="left-border-fillin"></h1>
       <h1>Position history</h1>
+      <div class="job-listing__year-in-margin">2018</div>
+      <div class="job-listing__company-name">Leidos</div>
+      <div class="job-listing__job-title">Software Development Architect</div>
+      <div class="job-listing__last_column_filler"></div>
+      <div class="job-listing__job-details job-listing__job-details-last">Analysed, designed, and built both the process and the ServiceNow-based tool to enable management of Leidos’ contract with the Department of Defence.
+        <ul>
+          <li>~5,000 ‘contract line items’ (CLIs) across 6 contract schedules analysed, cleaned, and imported.</li>
+          <li>Remediation process developed and deployed.</li>
+          <li>Custom ServiceNow tool built to manage the flow of a CLI from a non-compliant state, through the remediation process, to compliance.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="grid-8-column job-listing">
       <div class="job-listing__year-in-margin">2018</div>
       <div class="job-listing__company-name">Leidos <span class="job-listing__company-name-note">(was Lockheed Martin)</span></div>
       <div class="job-listing__job-title">Technical Project Controller</div>
@@ -156,7 +164,6 @@
         </ul>
       </div>
     </section>
-    
     <section class="grid-8-column job-listing">
       <div class="job-listing__year-in-margin">2015</div>
       <div class="job-listing__company-name">Byte Information Technology</div>
@@ -167,7 +174,6 @@
         <span class="hide-if-cv">7 AU/NZ sites.</span>
       </div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2014</div>
       <div class="job-listing__company-name">National Australia Bank</div>
@@ -177,7 +183,6 @@
       <div class="job-listing__job-details">This was a project without a well defined schedule: a milestone was a diamond drawn in Visio! No dependencies, no accountability. Two subcontractors in direct competition with each other working towards the same goal on the same project. It was an utter shambles.</div>
       <div class="job-listing__job-details job-listing__job-details-last">It was the worst job I’ve ever had and I’ll never do anything like it again. Thanks for listening.</div>
     </section>
-
     <section class="grid-8-column job-listing">
       <div class="job-listing__year-in-margin">2013</div>
       <div class="job-listing__company-name">IBM</div>
@@ -187,7 +192,6 @@
       <div class="job-listing__job-details job-listing__job-details-will-be-last-if-resume">Migrated the NAB’s 1st level Service Desk to a new offshore desk based in Bangalore, India.</div>
       <div class="job-listing__job-details job-listing__job-details-last hide-if-resume">Designed improved escalation and feedback processes to anticipate and prevent customer dissatisfaction events. Improved the desk’s knowledge tools to enable agents to discover solutions. Customer satisfaction increased from ~65% at arrival to an on-target 85+%.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2011</div>
       <div class="job-listing__company-name">Victorian Building Authority</div>
@@ -197,7 +201,6 @@
       <div class="job-listing__job-details">Planned and delivered the migration of the organisation’s physical Exchange 5.5 infrastructure to a virtualized Exchange Server 2010 hosted on VMware ESX.</div>
       <div class="job-listing__job-details job-listing__job-details-last">Upgraded the core Citrix farm to XenApp, including a high visibility public-facing database with over 100,000 users.</div>
     </section>
-
     <section class="grid-8-column job-listing">
       <div class="job-listing__year-in-margin">2011</div>
       <div class="job-listing__company-name">Mod Dance Company</div>
@@ -208,9 +211,6 @@
       <div class="job-listing__job-details hide-if-resume">This was the greatest job I’ve ever had. Me and a couple of friends got involved with this project and it turned from a thing we did at night in to our full-time job. It consumed us for a year: we did everything, and we made it up as we went.</div>
       <div class="job-listing__job-details job-listing__job-details-last hide-if-resume">We opened in March 2011 at the State Theatre in Melbourne. The show toured to Sydney, and we had plans to take it to Brisbane and Perth until we realised that we had no money left. You should listen to people who tell you there’s no money in the arts.</div>
     </section>
-
-
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2010</div>
       <div class="job-listing__company-name">National Australia Bank</div>
@@ -219,7 +219,6 @@
       <div class="job-listing__job-note">Melbourne</div>
       <div class="job-listing__job-details job-listing__job-details-last">Planned and delivered the migration of 3,500 users from legacy platforms to a centralised remote access solution (‘Access NAB’) based on Citrix XenDesktop/XenApps; integrated the support processes to BAU and transitioned business processes offshore.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2009</div>
       <div class="job-listing__company-name">National Australia Bank</div>
@@ -229,7 +228,6 @@
       <div class="job-listing__job-details">Managed the bank’s 2nd level Desktop Support team, the escalation point for all desktop and application related issues for the bank’s 33,000 seats.</div>
       <div class="job-listing__job-details job-listing__job-details-last">Managed the transition of the bank’s 1st level support function from Telstra to IBM; assisted the new desk in Queensland with process, training and quality issues.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2007</div>
       <div class="job-listing__company-name">National Australia Bank</div>
@@ -238,7 +236,6 @@
       <div class="job-listing__job-note">Melbourne</div>
       <div class="job-listing__job-details job-listing__job-details-last">Implemented the bank’s new nationwide XP desktop solution; 3rd level technical specialist deep in the Windows Server admin tools.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2006</div>
       <div class="job-listing__company-name">Department of Justice Victoria</div>
@@ -248,7 +245,6 @@
       <div class="job-listing__job-details">Relocated the Department’s data centre from Melbourne’s CBD to a 3rd party hosting provider over the course of 6 weekends without a single unplanned disruption to service.</div>
       <div class="job-listing__job-details job-listing__job-details-last">Virtualised a number of critical legacy systems (VMware) as part of the migration to mitigate the risks of ageing hardware.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2005</div>
       <div class="job-listing__company-name">gen-i</div>
@@ -257,7 +253,6 @@
       <div class="job-listing__job-note">Melbourne</div>
       <div class="job-listing__job-details job-listing__job-details-last">Consultant providing Microsoft installation and support services to gen-i’s customers.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2003</div>
       <div class="job-listing__company-name">Getech</div>
@@ -266,7 +261,6 @@
       <div class="job-listing__job-note">Ipswich, UK</div>
       <div class="job-listing__job-details job-listing__job-details-last">Consultant providing Microsoft installation and support services to Getech’s customers.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2001</div>
       <div class="job-listing__company-name">The British Council</div>
@@ -275,7 +269,6 @@
       <div class="job-listing__job-note">Albania, Kosovo, Macedonia, Colombia, Ukraine, Senegal, Nigeria, Tunisia, Spain, Portugal, Italy ... okay, I’m showing off</div>
       <div class="job-listing__job-details job-listing__job-details-last">Planned and implemented a global SOE rollout in a bunch of countries around the world. This was back in the day when you still got flown Business everywhere. Good times.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1999</div>
       <div class="job-listing__company-name">The National Grid</div>
@@ -284,7 +277,6 @@
       <div class="job-listing__job-note">London, UK</div>
       <div class="job-listing__job-details job-listing__job-details-last">Responsible for a team of 15, providing support to rollout teams operating around the country: account migration, 2nd/3rd line support and server deployment.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1999</div>
       <div class="job-listing__company-name">EDS/Xerox</div>
@@ -293,7 +285,6 @@
       <div class="job-listing__job-note">Northern Europe &amp; Scandinavia</div>
       <div class="job-listing__job-details job-listing__job-details-last">Responsible for teams of up to 5 engineers deploying a standard desktop to over 2,000 desktops across Europe and Scandinavia.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">1998</div>
       <div class="job-listing__company-name">Xerox</div>
@@ -302,7 +293,6 @@
       <div class="job-listing__job-note">Hertfordshire, UK</div>
       <div class="job-listing__job-details">We got there! Are you still reading?! My first job. I co-ordinated the rollout of Windows NT (as the customer rather than the vendor).</div>
     </section>
-
     <!-- 'NAB various roles...' to display in resume mode -->
     <section class="grid-8-column job-listing hide-if-cv">
       <div class="job-listing__year-in-margin">2010</div>
@@ -318,7 +308,6 @@
         </ul>
       </div>
     </section>
-
     <!-- 'Before that...' to display in resume mode -->
     <section class="grid-8-column job-listing hide-if-cv">
       <div class="job-listing__year-in-margin">2006</div>
@@ -335,7 +324,6 @@
         </ul>
       </div>
     </section>
-
     <!-- h1 'Education' -->
     <a class="anchor" id="education"></a>
     <section class="grid-8-column job-listing hide-if-resume">
@@ -350,7 +338,6 @@
       <div class="job-listing__job-details">Fortunately my 3rd year was a placement year, and I ended up at Xerox. At the end of that year, my university weren’t so keen on having me back (due to my woefully poor academic performance) and Xerox weren’t so keen on having me leave (due to my exquisitely fine work performance). For me it was perfect&mdash;I loved work, I hated study.</div>
       <div class="job-listing__job-details job-listing__job-details-last">And so, I didn’t finish my degree and I stayed at Xerox. It has turned out to be one of the most serendipitous decisions I’ve ever made; the Xerox job led to work all around Europe, which led to my job with The British Council which took me all around the world. You don’t get to travel the world on expenses in a graduate position, no sir.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin"></div>
       <div class="job-listing__full-width-description">Other professional studies</div>
@@ -358,7 +345,6 @@
       <div class="job-listing__job-details">Through the years I’ve done the odd qualification here and there&mdash;Microsoft, Citrix, the usual stuff&mdash;but I’ve always found it pointless. You don’t learn anything.</div>
       <div class="job-listing__job-details">Recently I’ve thought about doing one of the Project Management certifications but I’ve met enough PMs who are &lsquo;PRINCE2 certified&rsquo; to know it’s a waste of money. I spend my time refining <a href="https://johnnydecimal.com">Johnny.Decimal</a> instead.</div>
     </section>
-
     <!-- h1 'References' -->
     <a class="anchor" id="references"></a>
     <section class="grid-8-column job-listing hide-if-resume">
@@ -380,7 +366,6 @@
       <div class="job-listing__last_column_filler"></div> -->
       <div class="job-listing__job-details">Contact details for Alex and Diana are available on request.</div>
     </section>
-
     <!-- h1 'Miscellanea' -->
     <a class="anchor" id="miscellanea"></a>
     <section class="grid-8-column job-listing hide-if-resume">
@@ -396,7 +381,6 @@
       <div class="job-listing__job-details">For the last 5-or-so years, however, I’ve been off the tools. Now I’m more interested in helping the team that has their fingers on the console work as efficiently as they can, rather than doing it myself. If you’re looking for an engineer, that is no longer me.</div>
       <div class="job-listing__job-details job-listing__job-details-last">Now, unless forced to do otherwise at work, I live on a Mac.</div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin"></div>
       <div class="job-listing__company-name">Tools I use</div>
@@ -416,7 +400,6 @@
         </ul>
       </div>
     </section>
-
     <section class="grid-8-column job-listing hide-if-resume">
       <div class="job-listing__year-in-margin">2018</div>
       <div class="job-listing__full-width-description">HTML5/CSS3/Node.js development</div>
@@ -424,8 +407,8 @@
       <div class="job-listing__job-details">The current issue with <a href="https://johnnydecimal.com">Johnny.Decimal</a> is that you need some sort of system to keep track of your database of numbers. I use Google Sheets at home and generally fall back to a SharePoint List when I’m working for someone else, but both solutions are clunky.</div>
       <div class="job-listing__job-details">I need a custom solution, so I decided to build one. I’m in the process of teaching myself the core web technologies: HTML5 &amp; CSS3 (which I’ve used to hand-code the page you’re reading, from scratch), with Javascript &amp; Node.js/Express for actual application functionality.</div>
       <div class="job-listing__job-details">The whole thing will be hosted on a Linode instance; I know enough *nix to maintain my own hosting services.</div>
+      <div class="job-listing__job-details"><em>November 2018 update:</em> I'm looking back on this code that I wrote only six months ago and it’s embarrassingly bad. Now I’m learning React! Johnny.Decimal is still a work-in-progress, it’s iterated through vanilla JS, Node.js/Express, and now React.</div>
     </section>
-
     <!-- h1 'And that is all' here -->
     <a class="anchor" id="that-is-all"></a>
     <section class="grid-8-column job-listing">
@@ -434,18 +417,16 @@
       <div class="job-listing__job-details last-div-on-page">
         <span class="hide-if-resume">The <a href="#" onclick="toggleCVOrResume()">shorter version</a></span>
         <span class="hide-if-cv">This shorter version</span>
-        of this page is available as <a href="https://jnoble.net/_jd/14.11%20John's%20resume/1809.01/John%20Noble%20-%20Resume%20-%20February%202018.docx">John Noble - Resume - February 2018.docx</a>. The
+        of this page is available as <a href="https://jnoble.net/_jd/14.11%20John's%20resume/1811.01/John%20Noble%20-%20Resume%20-%20November%202018.docx">John Noble - Resume - November 2018.docx</a>. The
         <span class="hide-if-cv"><a href="#" onclick="toggleCVOrResume()">longer version</a></span>
         <span class="hide-if-resume">longer version</span>
         <span class="hide-if-resume">(the page you're reading now)</span> is only available online.
       </div>
     </section>
-
-  <div class="footer">
-    v1809.01 | <a href="#">Back to the top</a>
-  </div>
-
+    <div class="footer">
+      v1811.01 | <a href="#">Back to the top</a>
+    </div>
   </main>
-  
 </body>
+
 </html>
